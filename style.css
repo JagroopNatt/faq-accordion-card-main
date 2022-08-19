@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+  --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+
+  --gr-Soft-violet: hsl(273, 75%, 66%);
+  --gr-Soft-blue: hsl(240, 73%, 65%);
+
+  --n-Very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --n-Dark-grayish-blue: hsl(240, 6%, 50%);
+
+  --d-light-grayish-blue: hsl(240, 5%, 91%);
+}
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*-------- mobile first design-------- */
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  background: linear-gradient(
+    to bottom,
+    hsl(273, 75%, 66%),
+    hsl(240, 73%, 65%)
+  );
+  background-attachment: fixed;
+  text-align: center;
+  line-height: 1.5;
+  height: 100%;
+}
+h1 {
+  color: var(--Very-dark-desaturated-blue);
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ------question------- */
+
+button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #787887;
+  font-weight: 700;
+  transition: 0.3s ease-in-out;
+  border: none;
+  background-color: #ffffff;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+section {
+  width: 88%;
+  max-width: 410px;
+  margin: 8rem auto;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1.25rem;
+}
+hr {
+  color: var(--n-Dark-grayish-blue);
+  margin: 10px auto;
+}
+p {
+  padding-top: 14px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* -----adding image in mobile design------ */
+
+.faq-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(/images/illustration-woman-online-mobile.svg),
+    url(/images/bg-pattern-mobile.svg);
+  background-repeat: no-repeat no-repeat;
+  max-width: 70%;
+  margin: 0 auto;
+  width: 260px;
+}
+.bg-pattern {
+  transform: translateY(-0.4rem);
+}
+.destop-img {
+  display: none;
+}
+.arrow-icon {
+  margin-left: auto;
+  transition: 0.4s ease;
+}
+
+/* ------answer------- */
+.answer {
+  text-align: left;
+  line-height: 1.5;
+  font-size: 12px;
+  color: #787887;
+  display: none;
+  padding-top: 0%;
+}
+
+/* -----extra classes used in js------ */
+
+.rotate {
+  transition: 0.5s ease;
+  transform: rotate(180deg);
+}
+
+.active {
+  font-weight: 700;
+  color: var(--Very-dark-desaturated-blue);
+  font-size: 14.5px;
+  transition: 0.28s ease-in-out;
+}
+.hide {
+  display: block;
+}
+
+/* --------hover------ */
+
+button:hover {
+  cursor: pointer;
+}
+
+/* ------ destop design------ */
+
+@media (min-width: 900px) {
+  section {
+    display: grid;
+    grid-template-columns: 1.28fr 1fr;
+    max-width: 900px;
+    height: 500px;
+    text-align: left;
+  }
+  h1 {
+    font-size: 2.2rem;
+  }
+  button {
+    font-size: 14px;
+  }
+  .answer {
+    font-size: 12px;
+  }
+
+  .faq-container::before {
+    display: none;
+  }
+  .faq-container {
+    padding-top: 2.4rem;
+  }
+  .mobile-img {
+    display: none;
+  }
+  .destop-img {
+    display: block;
+    background-image: url(/images/bg-pattern-desktop.svg);
+    background-position: 120% 75%;
+    background-repeat: no-repeat;
+  }
+  .destop-images {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+  .faq-container {
+    max-width: 320px;
+  }
+
+  .ill-destop {
+    position: relative;
+    top: 4rem;
+    left: -4.8rem;
+  }
+
+  .dropbox {
+    position: relative;
+    bottom: 23rem;
+    left: -6rem;
+  }
+}
